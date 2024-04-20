@@ -1,0 +1,4 @@
+#ifndef JAVAMODIFIERS_H
+#define JAVAMODIFIERS_H
+
+#endif // JAVAMODIFIERS_H
