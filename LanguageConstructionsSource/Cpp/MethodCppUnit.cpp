@@ -1,14 +1,14 @@
-#include "LanguageConstructionsHeader/Cpp/MethodUnit.h"
+#include "LanguageConstructionsHeader/Cpp/MethodCppUnit.h"
 
-MethodUnit::MethodUnit(const QString &name, const QString &returnType, Flags flags)
+MethodCppUnit::MethodCppUnit(const QString &name, const QString &returnType, Flags flags)
     : _name {name}, _returnType {returnType}, _flags {flags} {}
 
-void MethodUnit::add(const QSharedPointer<Unit> &unit, Flags flags)
+void MethodCppUnit::add(const QSharedPointer<Unit> &unit, Flags flags)
 {
     units.append(unit);
 }
 
-QString MethodUnit::compile(unsigned int level) const
+QString MethodCppUnit::compile(unsigned int level) const
 {
     const Flags Static {static_cast<Flags>(BehaviorModifier::Static)};
     const Flags Virtual {static_cast<Flags>(BehaviorModifier::Virtual)};

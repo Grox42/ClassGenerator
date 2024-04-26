@@ -14,6 +14,12 @@ void ClassCsUnit::add(const QSharedPointer<Unit> &unit, Flags accessModifier)
 QString ClassCsUnit::compile(unsigned int level) const
 {
     QString result {generateShift(level) + "class" + _name + " {\n"};
-    //
+    for (int i {0}; i < accessModifierToString.size(); i++) {
+        if (accessBlocks[i].empty()) continue;
+        for (const QSharedPointer<Unit> &unit : accessBlocks[i])
+            result += generateShift(level + 1) + accessModifierToString[i] + ' ' + unit->compile(0);
+        result += '\n';
+    }
+    result += generateShift(level) + "};\n";
     return result;
 }

@@ -1,7 +1,7 @@
 #include "AbstractFactoryHeader/ConcreteFactories/CppConstructionFactory.h"
 #include "LanguageConstructionsHeader/Cpp/ClassCppUnit.h"
-#include "LanguageConstructionsHeader/Cpp/MethodUnit.h"
-#include "LanguageConstructionsHeader/Cpp/PrintOperatorUnit.h"
+#include "LanguageConstructionsHeader/Cpp/MethodCppUnit.h"
+#include "LanguageConstructionsHeader/Cpp/PrintOperatorCppUnit.h"
 
 QSharedPointer<Unit> CppConstructionFactory::createClass(const QString &name) const
 {
@@ -10,10 +10,10 @@ QSharedPointer<Unit> CppConstructionFactory::createClass(const QString &name) co
 
 QSharedPointer<Unit> CppConstructionFactory::createMethod(const QString &name, const QString &returnType, Unit::Flags flags ) const
 {
-    return QSharedPointer<Unit> {new MethodUnit(name, returnType, flags)};
+    return QSharedPointer<Unit> {new MethodCppUnit(name, returnType, flags)};
 }
 
 QSharedPointer<Unit> CppConstructionFactory::createStatement(const QString &text) const
 {
-    return QSharedPointer<Unit> {new PrintOperatorUnit(text)};
+    return QSharedPointer<Unit> {new PrintOperatorCppUnit(text)};
 }

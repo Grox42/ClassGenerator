@@ -8,11 +8,14 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
     AbstractFactorySource/ConcreteFactories/CppConstructionFactory.cpp \
+    AbstractFactorySource/ConcreteFactories/CsConstructionFactory.cpp \
+    LanguageConstructionsSource/Cpp/MethodCppUnit.cpp \
+    LanguageConstructionsSource/Cpp/PrintOperatorCppUnit.cpp \
+    LanguageConstructionsSource/Cs/MethodCsUnit.cpp \
+    LanguageConstructionsSource/Cs/PrintOperatorCsUnit.cpp \
     LanguageConstructionsSource/Unit.cpp \
     ##
     LanguageConstructionsSource/Cpp/ClassCppUnit.cpp \
-    LanguageConstructionsSource/Cpp/MethodUnit.cpp \
-    LanguageConstructionsSource/Cpp/PrintOperatorUnit.cpp \
     #
     LanguageConstructionsSource/Cs/ClassCsUnit.cpp \
     ###
@@ -24,12 +27,15 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    AbstractFactoryHeader/ConcreteFactories/CsConstructionFactory.h \
+    LanguageConstructionsHeader/Cpp/MethodCppUnit.h \
+    LanguageConstructionsHeader/Cpp/PrintOperatorCppUnit.h \
+    LanguageConstructionsHeader/Cs/MethodCsUnit.h \
+    LanguageConstructionsHeader/Cs/PrintOperatorCsUnit.h \
     LanguageConstructionsHeader/Unit.h \
     ##
     LanguageConstructionsHeader/Cpp/CppModifier.h \
     LanguageConstructionsHeader/Cpp/ClassCppUnit.h \
-    LanguageConstructionsHeader/Cpp/MethodUnit.h \
-    LanguageConstructionsHeader/Cpp/PrintOperatorUnit.h \
     #
     LanguageConstructionsHeader/Cs/CsModifier.h \
     LanguageConstructionsHeader/Cs/ClassCsUnit.h \
