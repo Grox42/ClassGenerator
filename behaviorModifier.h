@@ -8,7 +8,6 @@ enum class BehaviorModifier : QString {
     Virtual = "virtual",
     Abstract = "abstract",
     Const = "const",
-    Readonly = "readonly",
     Sealed  = "sealed ",
     Final = "final"
 };
