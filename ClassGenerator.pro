@@ -9,6 +9,7 @@ CONFIG += c++17 cmdline
 SOURCES += \
     AbstractFactorySource/ConcreteFactories/CppConstructionFactory.cpp \
     AbstractFactorySource/ConcreteFactories/CsConstructionFactory.cpp \
+    AbstractFactorySource/ConcreteFactories/JavaConstructionFactory.cpp \
     LanguageConstructionsSource/Cpp/MethodCppUnit.cpp \
     LanguageConstructionsSource/Cpp/PrintOperatorCppUnit.cpp \
     LanguageConstructionsSource/Cs/MethodCsUnit.cpp \
@@ -28,6 +29,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     AbstractFactoryHeader/ConcreteFactories/CsConstructionFactory.h \
+    AbstractFactoryHeader/ConcreteFactories/JavaConstructionFactory.h \
     LanguageConstructionsHeader/Cpp/MethodCppUnit.h \
     LanguageConstructionsHeader/Cpp/PrintOperatorCppUnit.h \
     LanguageConstructionsHeader/Cs/MethodCsUnit.h \
