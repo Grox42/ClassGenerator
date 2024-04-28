@@ -14,7 +14,7 @@ protected:
     inline static const QMap<Unit::Flags, QString> behaviorModifierToString {
         { 1 << 0, "static" },
         { 1 << 1, "virtual" },
-        { 1 << 2, "abstract" }};
+        /*{ 1 << 2, "abstract" }*/};
 public:
     enum class AccessModifier {
         Private, PrivateProtected, Protected,
@@ -22,7 +22,7 @@ public:
     enum class BehaviorModifier : Unit::Flags {
         Static = 1 << 0,
         Virtual = 1 << 1,
-        Abstract = 1 << 2 };
+        /*Abstract = 1 << 2*/ };
 };
 
 #endif // CSMODIFIER_H

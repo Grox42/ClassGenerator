@@ -12,20 +12,21 @@ QString MethodCsUnit::compile(unsigned int level) const
 {
     const Flags Static {static_cast<Flags>(BehaviorModifier::Static)};
     const Flags Virtual {static_cast<Flags>(BehaviorModifier::Virtual)};
-    const Flags Abstract {static_cast<Flags>(BehaviorModifier::Abstract)};
-    QString result {generateShift(level)};
+    //const Flags Abstract {static_cast<Flags>(BehaviorModifier::Abstract)};
+    QString result;
 
     if (_flags & Static)
-        result += behaviorModifierToString[Static];
+        result += behaviorModifierToString[Static] + ' ';
     else if (_flags & Virtual)
-        result += behaviorModifierToString[Virtual];
-    else if (_flags & Abstract)
-        result += behaviorModifierToString[Abstract];
-    result += ' ' + _returnType + ' ' + _name + "()\n{\n";
+        result += behaviorModifierToString[Virtual] + ' ';
+    //else if (_flags & Abstract)
+    //    result += behaviorModifierToString[Abstract] + ' ';
+    result += _returnType + ' ' + _name + "() {\n";
 
+    if (units.empty()) return result + generateShift(level) + "}\n";
     for (const QSharedPointer<Unit> &unit : units)
         result += unit->compile(level + 1);
-    result += generateShift(level) + "}\n\n";
 
+    result += generateShift(level) + "}\n";
     return result;
 }

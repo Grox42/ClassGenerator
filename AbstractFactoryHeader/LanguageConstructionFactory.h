@@ -12,6 +12,7 @@ public:
         const QString &returnType = "void",
         Unit::Flags flags = 0) const = 0;
     virtual QSharedPointer<Unit> createStatement(const QString &text) const = 0;
+    virtual ~LanguageConstructionFactory() = default;
 };
 
 #endif // LANGUAGECONSTRUCTIONFACTORY_H

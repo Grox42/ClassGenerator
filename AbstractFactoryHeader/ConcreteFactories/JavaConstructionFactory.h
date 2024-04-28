@@ -12,6 +12,7 @@ public:
         const QString &returnType = "void",
         Unit::Flags flags = 0) const override;
     QSharedPointer<Unit> createStatement(const QString &text) const override;
+    ~JavaConstructionFactory() override = default;
 };
 
 #endif // JAVACONSTRUCTIONFACTORY_H

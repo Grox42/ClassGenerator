@@ -8,7 +8,7 @@ class ClassCsUnit : public Unit, public CsModifier
 {
 private:
     QString _name;
-    QVector<QVector<QSharedPointer<Unit>>> accessBlocks;
+    QVector<QVector<QSharedPointer<Unit>>> _accessBlocks;
 public:
     ClassCsUnit(const QString &name);
     ~ClassCsUnit() override = default;

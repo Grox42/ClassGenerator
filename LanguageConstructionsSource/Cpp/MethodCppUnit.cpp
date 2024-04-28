@@ -5,7 +5,7 @@ MethodCppUnit::MethodCppUnit(const QString &name, const QString &returnType, Fla
 
 void MethodCppUnit::add(const QSharedPointer<Unit> &unit, Flags flags)
 {
-    units.append(unit);
+    _units.append(unit);
 }
 
 QString MethodCppUnit::compile(unsigned int level) const
@@ -14,22 +14,21 @@ QString MethodCppUnit::compile(unsigned int level) const
     const Flags Virtual {static_cast<Flags>(BehaviorModifier::Virtual)};
     const Flags Const {static_cast<Flags>(BehaviorModifier::Const)};
     QString result {generateShift(level)};
-    if (_flags & Static && _flags & Virtual)
-        throw std::runtime_error("static and virtual modifiers cannot be used together");
 
     if (_flags & Static)
-        result += behaviorModifierToString[Static];
+        result += behaviorModifierToString[Static] + ' ';
     else if (_flags & Virtual)
-        result += behaviorModifierToString[Virtual];
-    result += ' ' + _returnType + ' ' + _name + "()";
+        result += behaviorModifierToString[Virtual] + ' ';
+    result += _returnType + ' ' + _name + "()";
 
     if (_flags & Const)
         result += ' ' + behaviorModifierToString[Const];
-    result += "\n{\n";
+    result += " {\n";
 
-    for (const QSharedPointer<Unit> &unit : units)
+    if (_units.empty()) return result + generateShift(level) + "}\n";
+    for (const QSharedPointer<Unit> &unit : _units)
         result += unit->compile(level + 1);
-    result += generateShift(level) + "}\n\n";
 
+    result += generateShift(level) + "}\n";
     return result;
 }

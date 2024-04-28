@@ -10,7 +10,7 @@ private:
     QString _name;
     QString _returnType;
     Flags _flags;
-    QVector<QSharedPointer<Unit>> units;
+    QVector<QSharedPointer<Unit>> _units;
 public:
     MethodCppUnit(const QString &name, const QString &returnType = "void", Flags flags = 0);
     ~MethodCppUnit() override = default;

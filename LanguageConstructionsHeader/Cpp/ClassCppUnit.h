@@ -8,7 +8,7 @@ class ClassCppUnit : public Unit, public CppModifier
 {
 private:
     QString _name;
-    QVector<QVector<QSharedPointer<Unit>>> accessBlocks;
+    QVector<QVector<QSharedPointer<Unit>>> _accessBlocks;
 public:
     ClassCppUnit(const QString &name);
     ~ClassCppUnit() override = default;

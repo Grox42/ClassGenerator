@@ -8,7 +8,7 @@ class ClassJavaUnit : public Unit, public JavaModifier
 {
 private:
     QString _name;
-    QVector<QVector<QSharedPointer<Unit>>> accessBlocks;
+    QVector<QVector<QSharedPointer<Unit>>> _accessBlocks;
 public:
     ClassJavaUnit(const QString &name);
     ~ClassJavaUnit() override = default;
