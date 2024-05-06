@@ -2,9 +2,8 @@
 #define CLASSCPPUNIT_H
 
 #include "LanguageConstructionsHeader/Unit.h"
-#include "LanguageConstructionsHeader/Cpp/CppModifier.h"
 
-class ClassCppUnit : public Unit, public CppModifier
+class ClassCppUnit : public Unit
 {
 private:
     QString _name;

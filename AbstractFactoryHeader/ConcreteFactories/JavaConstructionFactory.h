@@ -2,6 +2,7 @@
 #define JAVACONSTRUCTIONFACTORY_H
 
 #include "AbstractFactoryHeader/LanguageConstructionFactory.h"
+#include "LanguageConstructionsHeader/Java/JavaModifiers.h"
 
 class JavaConstructionFactory : public LanguageConstructionFactory
 {

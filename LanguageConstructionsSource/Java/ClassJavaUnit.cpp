@@ -1,4 +1,7 @@
 #include "LanguageConstructionsHeader/Java/ClassJavaUnit.h"
+#include "LanguageConstructionsHeader/Java/JavaModifiers.h"
+
+using namespace JavaModifier;
 
 ClassJavaUnit::ClassJavaUnit(const QString &name)
     : _name {name}

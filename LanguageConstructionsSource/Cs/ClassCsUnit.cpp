@@ -1,4 +1,7 @@
 #include "LanguageConstructionsHeader/Cs/ClassCsUnit.h"
+#include "LanguageConstructionsHeader/Cs/CsModifier.h"
+
+using namespace CsModifier;
 
 ClassCsUnit::ClassCsUnit(const QString &name)
     : _name {name}

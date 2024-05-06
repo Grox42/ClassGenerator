@@ -2,9 +2,8 @@
 #define METHODCSUNIT_H
 
 #include "LanguageConstructionsHeader/Unit.h"
-#include "LanguageConstructionsHeader/Cs/CsModifier.h"
 
-class MethodCsUnit : public Unit, public CsModifier
+class MethodCsUnit : public Unit
 {
 private:
     QString _name;

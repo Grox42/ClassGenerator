@@ -1,4 +1,7 @@
 #include "LanguageConstructionsHeader/Cpp/ClassCppUnit.h"
+#include "LanguageConstructionsHeader/Cpp/CppModifier.h"
+
+using namespace CppModifier;
 
 ClassCppUnit::ClassCppUnit(const QString &name)
     : _name {name}

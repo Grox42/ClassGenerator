@@ -1,4 +1,7 @@
 #include "LanguageConstructionsHeader/Cpp/MethodCppUnit.h"
+#include "LanguageConstructionsHeader/Cpp/CppModifier.h"
+
+using namespace CppModifier;
 
 MethodCppUnit::MethodCppUnit(const QString &name, const QString &returnType, Flags flags)
     : _name {name}, _returnType {returnType}, _flags {flags} {}
@@ -10,9 +13,6 @@ void MethodCppUnit::add(const QSharedPointer<Unit> &unit, Flags flags)
 
 QString MethodCppUnit::compile(unsigned int level) const
 {
-    const Flags Static {static_cast<Flags>(BehaviorModifier::Static)};
-    const Flags Virtual {static_cast<Flags>(BehaviorModifier::Virtual)};
-    const Flags Const {static_cast<Flags>(BehaviorModifier::Const)};
     QString result {generateShift(level)};
 
     if (_flags & Static)

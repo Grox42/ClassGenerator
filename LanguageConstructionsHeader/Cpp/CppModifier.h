@@ -5,22 +5,19 @@
 #include <QVector>
 #include <QMap>
 
-class CppModifier
+namespace CppModifier
 {
-protected:
-    inline static const QVector<QString> accessModifierToString {
+    /*extern*/ const QVector<QString> accessModifierToString {
         "private", "protected", "public" };
-    inline static const QMap<Unit::Flags, QString> behaviorModifierToString {
+    /*extern*/ const QMap<Unit::Flags, QString> behaviorModifierToString {
         { 1 << 0, "static" },
         { 1 << 1, "virtual" },
         { 1 << 2, "const" }};
-public:
-    enum class AccessModifier {
+    enum AccessModifier {
         Private, Protected, Public };
-    enum class BehaviorModifier : Unit::Flags {
+    enum BehaviorModifier : Unit::Flags {
         Static = 1 << 0,
         Virtual = 1 << 1,
         Const = 1 << 2 };
-};
-
+}
 #endif // CPPMODIFIER_H

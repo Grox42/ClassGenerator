@@ -1,4 +1,7 @@
 #include "LanguageConstructionsHeader/Cs/MethodCsUnit.h"
+#include "LanguageConstructionsHeader/Cs/CsModifier.h"
+
+using namespace CsModifier;
 
 MethodCsUnit::MethodCsUnit(const QString &name, const QString &returnType, Flags flags)
     : _name {name}, _returnType {returnType}, _flags {flags} {}
@@ -10,9 +13,6 @@ void MethodCsUnit::add(const QSharedPointer<Unit> &unit, Flags flags)
 
 QString MethodCsUnit::compile(unsigned int level) const
 {
-    const Flags Static {static_cast<Flags>(BehaviorModifier::Static)};
-    const Flags Virtual {static_cast<Flags>(BehaviorModifier::Virtual)};
-    //const Flags Abstract {static_cast<Flags>(BehaviorModifier::Abstract)};
     QString result;
 
     if (_flags & Static)

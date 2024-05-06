@@ -2,9 +2,8 @@
 #define METHODJAVAUNIT_H
 
 #include "LanguageConstructionsHeader/Unit.h"
-#include "LanguageConstructionsHeader/Java/JavaModifiers.h"
 
-class MethodJavaUnit : public Unit, public JavaModifier
+class MethodJavaUnit : public Unit
 {
 private:
     QString _name;

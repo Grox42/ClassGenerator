@@ -2,6 +2,7 @@
 #define CSCONSTRUCTIONFACTORY_H
 
 #include "AbstractFactoryHeader/LanguageConstructionFactory.h"
+#include "LanguageConstructionsHeader/Cs/CsModifier.h"
 
 class CsConstructionFactory : public LanguageConstructionFactory
 {

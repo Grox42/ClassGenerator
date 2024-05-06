@@ -2,11 +2,11 @@
 #define CPPCONSTRUCTIONFACTORY_H
 
 #include "AbstractFactoryHeader/LanguageConstructionFactory.h"
+#include "LanguageConstructionsHeader/Cpp/CppModifier.h"
 
 class CppConstructionFactory : public LanguageConstructionFactory
 {
 public:
-    CppConstructionFactory() = default;
     QSharedPointer<Unit> createClass(const QString &name) const override;
     QSharedPointer<Unit> createMethod(
         const QString &name,
